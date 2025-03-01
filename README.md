@@ -27,8 +27,8 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 ## 🏗 Project Architecture
 <img src="" width=800 />
 
-## Prerequisites
-Ensure that the Nexus repository from module 6 is up and running.
+## 📝 Prerequisites
+- <b>Ensure that Nexus Repository from module 6 is up and running.</b>
 
 ## ⚙️ Project Configuration
 ### Clone the Git Repository and Create a New One
