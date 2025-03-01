@@ -171,3 +171,4 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 bash
 app-docker-exercises-1  | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.sql.Connection]: Factory method 'getConnection' threw exception with message: Access denied for user 'unicorn'@'%' to database 'team-member-projects'
 ```
+
