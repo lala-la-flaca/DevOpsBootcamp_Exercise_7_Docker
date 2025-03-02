@@ -410,26 +410,23 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 
    
 ## Run Application on Digital Ocean with Docker Compose
-1. Create a Droplet on Digital Ocean:
-   a) Select **Create Droplet** from the Digital Ocean dashboard. <br>
-
-     <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/create%20a%20droplet%201.png?raw=true" width=800 />
+1. Create a Droplet on Digital Ocean:</br>
+   a) Select **Create Droplet** from the Digital Ocean dashboard.
+       <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/create%20a%20droplet%201.png?raw=true" width=800 />
     
-   b) Select a region: Select the region closest to your location.<be>
+   b) Select a region: Select the region closest to your location.
+       <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/Droplet%20region.png?raw=true" width=800 />
 
-      <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/Droplet%20region.png?raw=true" width=800 />
-
-   c) Select an image: Select the Ubuntu image.<br>
-
-      <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/CreatingDropletChooseImage.png?raw=true" width=800 />
+   c) Select an image: Select the Ubuntu image.
+       <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/CreatingDropletChooseImage.png?raw=true" width=800 />
      
      - Choose Size: <br>
        * Droplet type: Select Basic.<br>
        * CPU options: Select Regular SSD and the 24GB option.<br>
 
-   d) Select the SSH key  as the Authentication Method. <br>
+   d) Select the SSH key  as the Authentication Method.
     - Generate a New SSH Key (if required): If you do not have an existing SSH key, follow DigitalOceans's guide to create a new pair.
-    - Use an existing SSH Key: if you already have a public SSK key pair, navigate to the .ssh folder in your local directory. Copy the public key and paste it into the appropriate field in DigitalOCean's interface.<br>
+    - Use an existing SSH Key: if you already have a public SSK key pair, navigate to the .ssh folder in your local directory. Copy the public key and paste it into the appropriate field in DigitalOCean's interface.
 
       <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/DropletSSH.png?raw=true" width=800 />
 
@@ -482,7 +479,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    vim ~/.bashrc
    source ~/.bashrc
    ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Environment%20Variables%20Dgital%20ocean.PNG" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Environment%20Variables%20Dgital%20ocean.PNG" width=500 />
    
 7. Copy the Docker compose file from your local machine to the Droplet.
    
