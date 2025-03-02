@@ -29,11 +29,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 ## 🏗 Project Architecture
 <img src="" width=800 />
 
+
 ## 📝 Prerequisites
 - <b>Ensure that Nexus Repository from module 6 is up and running.</b>
 
 
 ## ⚙️ Project Configuration
+
 ### Clone the Git Repository and Create a New One
 1. Clone Nana's repository.
    
@@ -41,9 +43,9 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    git clone <repository_link>
    ```
    
-3. Remove existing git history: open a terminal, navigate to the cloned repository, and delete the .git folder to remove the existing version history.
-4. Create your Git repository.
-5. Initialize a new git repository.
+2. Remove existing git history: open a terminal, navigate to the cloned repository, and delete the .git folder to remove the existing version history.
+3. Create your Git repository.
+4. Initialize a new git repository.
    
    ```bash
    git init
@@ -54,6 +56,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    git push
    ```
 
+
 ## Start MySQL docker container
 1. Open a browser and go to Docker Hub to find the official MySQL image.
    
@@ -61,7 +64,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/01%20Github%20mysql%20db.PNG" width=800 />
    
-3. Pull the MySql image.
+2. Pull the MySql image.
    
    ```bash
    docker pull mysql
@@ -69,7 +72,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/01%202%20pulling%20image.png" width=800 />
    
-5. Verify the downloaded image.
+3. Verify the downloaded image.
    
    ```bash
    docker images
@@ -77,7 +80,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/01%20Github%20mysql%20img.png" width=800 />
    
-7. Run MySQL container.
+4. Run MySQL container.
    
    ```bash
      docker run \
@@ -92,7 +95,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/01%20Starting%20Container4%20with%20ports.png" width=800 />
    
-9. Verify that the container is running.
+5. Verify that the container is running.
 
    ```bash
    docker ps
@@ -106,7 +109,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20DockerHub%20phpmyadmin.PNG" width=800 />
    
-3. Pull phpMyAdmin official image.
+2. Pull phpMyAdmin official image.
 
    ```bash
    docker pull phpmyadmin
@@ -114,13 +117,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20PullingMysqlGUI.PNG" width=800 />
    
-5. Verify the downloaded image.
+3. Verify the downloaded image.
 
    ```bash
    docker images
    ```
    
-7. Run phpMyAdmin container.
+4. Run phpMyAdmin container.
 
    ```bash
    docker run \
@@ -131,14 +134,14 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    phpmyadmin
    ```
    
-9. Verify that the container is running.
+5. Verify that the container is running.
 
    ```bash
     docker ps
     ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20runningPhpMyAdmin%20container.PNG" width=800 />
    
-11. Open a browser and go to phpMyAdmin.
+6. Open a browser and go to phpMyAdmin.
 
     [phpMyAdmin](http://157.230.0.133:8085/)
 
@@ -150,7 +153,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Creating%20file.PNG" width=800 />
    
-3. Define services and add a Volume to persist data from Mysql.
+2. Define services and add a Volume to persist data from Mysql.
 
    ```bash
    version: '3'
@@ -187,7 +190,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
         driver: local
    ```
    
-5. Navigate to the root folder of the application and run Docker compose.
+3. Navigate to the root folder of the application and run Docker compose.
 
    ```bash
    docker compose -f docker-compose.yaml up
@@ -195,13 +198,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/03%20Running%20Docker%20compose.PNG" width=800 />
    
-7. Verify that both containers are running.
+4. Verify that both containers are running.
 
    ```bash
    docker ps
    ```
    
-8. Run the Java application locally.
+5. Run the Java application locally.
    
    ```bash
    gradle build
@@ -216,7 +219,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Creating%20file.PNG" width=800 />
       
-3. Add the instructions to dockerize the Java application
+2. Add the instructions to dockerize the Java application
 
    ```bash
     FROM openjdk:17-jdk-alpine    
@@ -238,13 +241,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
        
    ```
    
-5. Navigate to the project directory and build the .jar file for your application with gradle.
+3. Navigate to the project directory and build the .jar file for your application with gradle.
 
    ```bash
    gradle build
    ```
    
-6. Build the docker image of the application.
+4. Build the docker image of the application.
 
    ```bash
    docker build -t docker-exercises:1.0 .
@@ -260,27 +263,27 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_7_docker_Nexus/blob/main/Img/Create%20a%20docker%20Hosted%20Repo%20in%20NExus.png" width=800 />
    
-5. Navigate to security, click on role, and create a role.
-   
-  <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/DockerRole.png" width=800 />
+4. Navigate to security, click on role, and create a role.
+
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/DockerRole.png" width=800 />
   
-7. Add the privileges to the role to access the docker hosted respository.
+5. Add the privileges to the role to access the docker hosted respository.
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/05%20adding%20privileges.png" width=800 />
    
-8. Assign the role to the user.
+6. Assign the role to the user.
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/userwithDockerRole.PNG" width=800 />
    
-10. Navigate to the docker hosted repository and add the Nexus Docker adapter to allow docker clients.
+7. Navigate to the docker hosted repository and add the Nexus Docker adapter to allow docker clients.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/05%20Cretaing%20a%20Docker%20repository%20on%20nexus%20and%20adding%20connector.PNG" width=800 />
     
-11. Add the Docker client port access to the firewall of the droplet where Nexus is hosted.
+8. Add the Docker client port access to the firewall of the droplet where Nexus is hosted.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/05%20Opening%20the%20port%20for%20nexus%20connector.png" width=800 />
     
-13. Add insecure registries to daemon.json file for port 8084
+9. Add insecure registries to daemon.json file for port 8084
     
     ```bash
     cd /var/snap/docker/current/config
@@ -295,7 +298,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20adding%20insecure%20repository%20port%2084.PNG" width=800 />
     
-15. Log in to Nexus from the command line.
+10. Log in to Nexus from the command line.
   
     ```bash
     docker login http://157.230.56.153:8084
@@ -303,13 +306,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20login%20to%20docker%20reposiotry.PNG" wodth=800 />
     
-16. Tag the docker image with the appropriate respository name and version tag.
+11. Tag the docker image with the appropriate respository name and version tag.
     
     ```bash
     docker tag docker-exercises:1.0 157.230.56.153:8084/docker-exercises:1.0
     ```
     
-17. Push the image to the Nexus Docker registry.
+12. Push the image to the Nexus Docker registry.
     
     ```bash
     docker push docker-exercises:1.0 157.230.56.153:8084/docker-exercises:1.0
@@ -317,9 +320,10 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20pushing%20docker%20images%20to%20the%20repo.png" width=800 />
     
-18. Verify that the image is available in the Docker repository on Nexus.
+13. Verify that the image is available in the Docker repository on Nexus.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20Image%20available%20Repository.png" width=800 />
+
 
 ## Add Java application to the Docker Compose file
 1. Open the existing YAML docker compose file.
@@ -336,7 +340,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
         - DB_SERVER=${DB_SERVER}
         #adding server test
    ```
-4. Configure the ENV variables.
+3. Configure the ENV variables.
    There are multiple options for setting the environment variables, but we used the .bashrc file locally for this exercise.
 
    ```bash
@@ -358,7 +362,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    ```
    <img src="" width=800 />
 
-5. Modify the docker-compose file to use Environment variables.
+4. Modify the docker-compose file to use Environment variables.
 
    ```bash
    version: '3'
@@ -433,23 +437,23 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    e) Select **Create Droplet**
 
 
-12. Select the **Networking** option from the left panel, then choose **Firewall**.
+2. Select the **Networking** option from the left panel, then choose **Firewall**.
 
     <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/SettingUpFirewall.png?raw=true" width=800 />
 
-11. Click on **Create Firewall**
+3. Click on **Create Firewall**
   
-12. Set the firewall rules for incoming traffic. Following security best practices, configure the firewall's inbound and outbound rules. In this case, you allow inbound SSH access from your machine to the Droplet, Nexus port, Nexus client, myphpadmin port, MySQL, and application port. restricting all other unnecessary connections.
+4. Set the firewall rules for incoming traffic. Following security best practices, configure the firewall's inbound and outbound rules. In this case, you allow inbound SSH access from your machine to the Droplet, Nexus port, Nexus client, myphpadmin port, MySQL, and application port. restricting all other unnecessary connections.
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Firewall%20ports.PNG" width=800 />
    
-11. SSH into the droplet to verify that everything works as expected.
+5. SSH into the droplet to verify that everything works as expected.
 
    ```bash
    ssh root@157.230.0.133
    ```
        
-2. Update the package manager and install Docker.
+6. Update the package manager and install Docker.
 
    ```bash
    apt update
@@ -457,7 +461,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    snap install docker
    ```
 
-3. Allow Docker to access insecure registries as docker was installed with snap with must modify the daemon.json file located in /var/snap/docker/current/config. IF the file does not exist, then you must create it.
+7. Allow Docker to access insecure registries as docker was installed with snap with must modify the daemon.json file located in /var/snap/docker/current/config. IF the file does not exist, then you must create it.
   
    Adding insecure registries to file:
    ```bash
@@ -473,7 +477,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Insecure%20registries.PNG" width=800 />
    
-5. Add environment variables on the droplet.
+8. Add environment variables on the droplet.
 
    ```bash
    vim ~/.bashrc
@@ -481,20 +485,20 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Environment%20Variables%20Dgital%20ocean.PNG" width=500 />
    
-7. Copy the Docker compose file from your local machine to the Droplet.
+9. Copy the Docker compose file from your local machine to the Droplet.
    
    ```bash
    scp docker-compose.yaml root@157.230.0.133:~/app
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Dockercompose%20yaml%20available%20DigitalOcean.PNG" width=800 />
    
-8. Log in to the Nexus repository to pull docker images.
+10. Log in to the Nexus repository to pull docker images.
    
    ```bash
    docker login HTTP://157.230.0.133:8084
    ```
    
-10. After copying the docker-compose file to the droplet and setting  the environment variables, you can run the docker compose file.
+11. After copying the docker-compose file to the droplet and setting  the environment variables, you can run the docker compose file.
     
     ```bash
     docker compose -f docker-compose.yaml up
@@ -508,14 +512,14 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     docker ps
     ```
     
-14. Open a browser and navigate to the application.
+13. Open a browser and navigate to the application.
 
     [Java Application Running](HTTP://157.230.0.133:8080)
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Java%20application%20running.PNG" width=800 />
   
 
-16. Access to phpMyAdmin
+14. Access to phpMyAdmin
     
     [phpMyAdmin](HTTP://157.230.0.133:8085)
     
@@ -531,7 +535,8 @@ bash
 app-docker-exercises-1  | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.sql.Connection]: Factory method 'getConnection' threw exception with message: Access denied for user 'unicorn'@'%' to database 'team-member-projects'
 ```
 
-Even though the official documentation states that MYSQL_DATABASE is optional and that providing a user and password grants the user superuser access, the database was not created when using team-member-project. Instead, I had to use the same name as server-db, as the user was only granted access to the mysql database.
+Even though the official documentation states that MYSQL_DATABASE is optional and that providing a user and password grants the user superuser access, the database was not created when using team-member-project. Instead, I had to use the same name as server-db, as the user was only granted access to the mysql-db database.
 
 <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Official%20Documentation.png" width=800 />
+
 
