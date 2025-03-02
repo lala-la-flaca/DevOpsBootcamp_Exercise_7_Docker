@@ -400,7 +400,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
         restart: always
         environment:
           - PMA_HOST=${PMA_HOST}
-    	    - PMA_PORT=${PMA_PORT}
+          - PMA_PORT=${PMA_PORT}
           - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     
         depends_on:
