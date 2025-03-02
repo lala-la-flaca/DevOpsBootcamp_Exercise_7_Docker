@@ -176,7 +176,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
         restart: always
         environment:
           - PMA_HOST=mysql-db
-          - PMA_PORT=8086
+          - PMA_PORT=3306
           - MYSQL_ROOT_PASSWORD=password
     
         depends_on:
