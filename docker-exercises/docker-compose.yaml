@@ -1,0 +1,46 @@
+version: '3'
+services:
+
+  docker-exercises:
+    image: 157.230.56.153:8084/docker-exercises:1.0
+    ports:
+      - 8080:8080
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PWD=${DB_PWD}
+      - DB_SERVER=${DB_SERVER}
+      #adding server test
+
+
+  mysql-db:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=mysql-db
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PWD}
+
+    volumes:
+      - mysql-db-data:/var/lib/mysql
+      #- ./mysql-init-scripts:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8085:80
+    restart: always
+    environment:
+      - PMA_HOST=${PMA_HOST}
+      - PMA_PORT=${PMA_PORT}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+    depends_on:
+      - "mysql-db"
+
+volumes:
+  mysql-db-data:
+    driver: local
+
