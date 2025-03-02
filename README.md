@@ -413,7 +413,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 1. Create a Droplet on Digital Ocean:
    a) Select **Create Droplet** from the Digital Ocean dashboard. <br>
 
-      <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/create%20a%20droplet%201.png?raw=true" width=800 />
+     <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/create%20a%20droplet%201.png?raw=true" width=800 />
     
    b) Select a region: Select the region closest to your location.<be>
 
@@ -438,14 +438,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 
 12. Select the **Networking** option from the left panel, then choose **Firewall**.
 
-   <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/SettingUpFirewall.png?raw=true" width=800 />
+    <img src="https://github.com/lala-la-flaca/deploy-java-app-digitalocean/blob/main/resources/Img/SettingUpFirewall.png?raw=true" width=800 />
 
 11. Click on **Create Firewall**
   
-12. Set the firewall rules for incoming traffic.<br>
-   Configuring Firewall on Digital Ocean: Following security best practices, configure the firewall's inbound and outbound rules. In this case, you allow inbound SSH access from your machine to the Droplet, Nexus port, Nexus client, myphpadmin port, MySQL, and application port. restricting all other unnecessary connections.
+12. Set the firewall rules for incoming traffic. Following security best practices, configure the firewall's inbound and outbound rules. In this case, you allow inbound SSH access from your machine to the Droplet, Nexus port, Nexus client, myphpadmin port, MySQL, and application port. restricting all other unnecessary connections.
 
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Firewall%20ports.PNG" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Firewall%20ports.PNG" width=800 />
    
 11. SSH into the droplet to verify that everything works as expected.
 
@@ -495,7 +494,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 8. Log in to the Nexus repository to pull docker images.
    
    ```bash
-   docker login 157.230.0.133:8084
+   docker login HTTP://157.230.0.133:8084
    ```
    
 10. After copying the docker-compose file to the droplet and setting  the environment variables, you can run the docker compose file.
