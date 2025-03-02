@@ -360,8 +360,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     export PMA_PORT=3306
     export PMA_HOST=mysql-db
    ```
-   <img src="" width=800 />
-
+ 
 4. Modify the docker-compose file to use Environment variables.
 
    ```bash
@@ -411,6 +410,12 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
       mysql-db-data:
         driver: local
    ```
+
+<details><summary><strong>⚠️ Modify Application to point to the remote server</strong></summary>
+Since the application was initially configured to run locally using localhost, update the code to replace localhost with the Droplet's IP address. After making this change, build a new Docker image and push it to the Nexus repository by following the previously outlined steps
+</details>
+
+
 
    
 ## Run Application on Digital Ocean with Docker Compose
@@ -538,5 +543,48 @@ app-docker-exercises-1  | Caused by: org.springframework.beans.BeanInstantiation
 Even though the official documentation states that MYSQL_DATABASE is optional and that providing a user and password grants the user superuser access, the database was not created when using team-member-project. Instead, I had to use the same name as server-db, as the user was only granted access to the mysql-db database.
 
 <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Official%20Documentation.png" width=800 />
+
+1. Get container ID.
+   
+  ```bash
+  docker ps
+  ```
+
+2. Access MySQL running container as the root user.
+   
+  ```bash
+  docker exec -it bdf457d8f1b9  mysql -u root -p
+  ```
+
+3. Inside the Container, we checked if the team-member-project was created, which was not the case:
+
+  ```bash
+  mysql> SHOW databases;
+  +--------------------+
+  | Database           |
+  +--------------------+
+  | information_schema |
+  | mysql              |
+  | mysql-db           |
+  | performance_schema |
+  | sys                |
+  +--------------------+
+  ```
+4. Checking permission for my user, as the database was not created therfore the user had no access to team-member-projects
+  ```bash
+  mysql> SHOW GRANTS FOR 'unicorn'@'%';
+  +-------------------------------------------------------+
+  | Grants for unicorn@%                                  |
+  +-------------------------------------------------------+
+  | GRANT USAGE ON *.* TO `unicorn`@`%`                   |
+  | GRANT ALL PRIVILEGES ON `mysql-db`.* TO `unicorn`@`%` |
+  +-------------------------------------------------------+
+  2 rows in set (0.00 sec)
+  
+  ```
+That's why the application was unable to access the team-member-projects, once we replaced the team-project-dabase for the mysql-db, the issue was fixed.
+
+
+
 
 
