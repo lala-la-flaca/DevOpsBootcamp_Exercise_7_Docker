@@ -32,6 +32,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 ## 📝 Prerequisites
 - <b>Ensure that Nexus Repository from module 6 is up and running.</b>
 
+
 ## ⚙️ Project Configuration
 ### Clone the Git Repository and Create a New One
 1. Clone Nana's repository.
@@ -143,6 +144,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20phpmyadmin%20UP.png" width=800 />
 
+
 ## Configure Docker Compose to start Mysql & Phpmydmin together.
 1. Create a YAML docker compose file in the project directory. Navigate to the root folder of the application, click on New, and file.
 
@@ -250,6 +252,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/04%20building%20docker%20file.PNG" width=800 />
 
+
 ## Push the Docker Image to the Nexus repository
 1. Open your browser and navigate to your Nexus Repository.
 2. Log in to Nexus as an Admin user.
@@ -259,7 +262,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
 5. Navigate to security, click on role, and create a role.
    
-  <img src="" width=800 />
+  <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/DockerRole.png" width=800 />
   
 7. Add the privileges to the role to access the docker hosted respository.
    
@@ -440,9 +443,9 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 11. Click on **Create Firewall**
   
 12. Set the firewall rules for incoming traffic.<br>
-   Configuring Firewall on Digital Ocean: Following security best practices, configure the firewall's inbound and outbound rules. In this case, you allow inbound SSH access from your machine to the Droplet, Nexus port, Nexus client, myphpadmin port, and application port. restricting all other unnecessary connections.
+   Configuring Firewall on Digital Ocean: Following security best practices, configure the firewall's inbound and outbound rules. In this case, you allow inbound SSH access from your machine to the Droplet, Nexus port, Nexus client, myphpadmin port, MySQL, and application port. restricting all other unnecessary connections.
 
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_7_docker_Nexus_Docker/blob/main/Img/Adding%20Firewall%20Rules%20to%20Droplet.PNG" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Firewall%20ports.PNG" width=800 />
    
 11. SSH into the droplet to verify that everything works as expected.
 
