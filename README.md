@@ -102,7 +102,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 1. Open a browser and go to Docker Hub to find the official phpMyAdmin image.
    
    [DockerHub](https://hub.docker.com/_/phpmyadmin)
-   
+
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20DockerHub%20phpmyadmin.PNG" width=800 />
    
 3. Pull phpMyAdmin official image.
@@ -138,8 +138,9 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20runningPhpMyAdmin%20container.PNG" width=800 />
    
 11. Open a browser and go to phpMyAdmin.
-    
+
     [phpMyAdmin](http://157.230.0.133:8085/)
+
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/02%20phpmyadmin%20UP.png" width=800 />
 
 ## Configure Docker Compose to start Mysql & Phpmydmin together.
@@ -150,7 +151,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 3. Define services and add a Volume to persist data from Mysql.
 
    ```bash
-     version: '3'
+   version: '3'
     services:
       mysql-db:
         image: mysql
@@ -205,6 +206,9 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    java -jar docker-exercises-project-1.0-SNAPSHOT.jar
    ```
 
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/01%20Starting%20application%20locally.png" width=800 />
+   
+
 ## Dockerize Java Application
 1. Create a Dockerfile in the root directory of the Java application.
 
@@ -255,7 +259,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
    
 5. Navigate to security, click on role, and create a role.
    
-  <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_6_Nexus_Cloud_Java/blob/main/Img/22%20Creating%20roles%20%203.png" width=800 />
+  <img src="" width=800 />
   
 7. Add the privileges to the role to access the docker hosted respository.
    
@@ -291,7 +295,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 15. Log in to Nexus from the command line.
   
     ```bash
-    docker login http://157.230.56.153:8084" width=800
+    docker login http://157.230.56.153:8084
     ```
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20login%20to%20docker%20reposiotry.PNG" wodth=800 />
@@ -488,7 +492,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 8. Log in to the Nexus repository to pull docker images.
    
    ```bash
-   docker login 157.230.0.133/8084
+   docker login 157.230.0.133:8084
    ```
    
 10. After copying the docker-compose file to the droplet and setting  the environment variables, you can run the docker compose file.
@@ -508,20 +512,27 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 14. Open a browser and navigate to the application.
 
     [Java Application Running](HTTP://157.230.0.133:8080)
+    
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Java%20application%20running.PNG" width=800 />
   
 
-15. Access to phpMyAdmin
+16. Access to phpMyAdmin
     
     [phpMyAdmin](HTTP://157.230.0.133:8085)
+    
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Access%20to%20Myphpadmin%20from%20server.PNG" width=800 />
 
+
 ## ❌ Troubleshooting & Fixes
+
 🔴 Issue: The Application does not have access to MySQL and exits with code 1
+
 ```
 bash
 app-docker-exercises-1  | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.sql.Connection]: Factory method 'getConnection' threw exception with message: Access denied for user 'unicorn'@'%' to database 'team-member-projects'
 ```
-Even when the official documentation says that the MYSQL_DATABASE is optional and if we add a user and password, this user is granted superuser access, the database was not created using the team-member-project. I had to use the same name as the server-db; the user only had access to the mysql-db.
+
+Even though the official documentation states that MYSQL_DATABASE is optional and that providing a user and password grants the user superuser access, the database was not created when using team-member-project. Instead, I had to use the same name as server-db, as the user was only granted access to the mysql database.
+
 <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/Official%20Documentation.png" width=800 />
 
