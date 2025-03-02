@@ -250,24 +250,31 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
 1. Open your browser and navigate to your Nexus Repository.
 2. Log in to Nexus as an Admin user.
 3. In the Nexus interface, go to settings, click on repositories, and create a Docker-hosted repository.
+   
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_7_docker_Nexus/blob/main/Img/Create%20a%20docker%20Hosted%20Repo%20in%20NExus.png" width=800 />
-4. Navigate to security, click on role, and create a role.
+   
+5. Navigate to security, click on role, and create a role.
+   
   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_6_Nexus_Cloud_Java/blob/main/Img/22%20Creating%20roles%20%203.png" width=800 />
   
-6. Add the privileges to the role to access the docker hosted respository.
+7. Add the privileges to the role to access the docker hosted respository.
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/05%20adding%20privileges.png" width=800 />
    
-7. Assign the role to the user.
-   <img src="" width=800 />
-8. Navigate to the docker hosted repository and add the Nexus Docker adapter to allow docker clients.
+8. Assign the role to the user.
+   
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/userwithDockerRole.PNG" width=800 />
+   
+10. Navigate to the docker hosted repository and add the Nexus Docker adapter to allow docker clients.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/05%20Cretaing%20a%20Docker%20repository%20on%20nexus%20and%20adding%20connector.PNG" width=800 />
     
-9. Add the Docker client port access to the firewall of the droplet where Nexus is hosted.
+11. Add the Docker client port access to the firewall of the droplet where Nexus is hosted.
+    
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/05%20Opening%20the%20port%20for%20nexus%20connector.png" width=800 />
     
-10. Add insecure registries to daemon.json file for port 8084
+13. Add insecure registries to daemon.json file for port 8084
+    
     ```bash
     cd /var/snap/docker/current/config
     vim daemon.json
@@ -281,7 +288,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20adding%20insecure%20repository%20port%2084.PNG" width=800 />
     
-11. Log in to Nexus from the command line.
+15. Log in to Nexus from the command line.
   
     ```bash
     docker login http://157.230.56.153:8084" width=800
@@ -289,13 +296,13 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20login%20to%20docker%20reposiotry.PNG" wodth=800 />
     
-12. Tag the docker image with the appropriate respository name and version tag.
+16. Tag the docker image with the appropriate respository name and version tag.
     
     ```bash
     docker tag docker-exercises:1.0 157.230.56.153:8084/docker-exercises:1.0
     ```
     
-13. Push the image to the Nexus Docker registry.
+17. Push the image to the Nexus Docker registry.
     
     ```bash
     docker push docker-exercises:1.0 157.230.56.153:8084/docker-exercises:1.0
@@ -303,7 +310,7 @@ This demo project is part of **Module 7: Containers with Docker** from the **Nan
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20pushing%20docker%20images%20to%20the%20repo.png" width=800 />
     
-14. Verify that the image is available in the Docker repository on Nexus.
+18. Verify that the image is available in the Docker repository on Nexus.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_Exercise_7_Docker/blob/main/Img/5%20Image%20available%20Repository.png" width=800 />
 
